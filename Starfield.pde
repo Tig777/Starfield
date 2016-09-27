@@ -1,7 +1,8 @@
-//your code here
+
 void setup()
 {
-	//your code here
+	size(400,400);
+	background(10);
 }
 void draw()
 {
@@ -13,7 +14,8 @@ class NormalParticle
 }
 interface Particle
 {
-	//your code here
+	public void move();
+	public void show();
 }
 class OddballParticle //uses an interface
 {
@@ -24,3 +26,7 @@ class JumboParticle //uses inheritance
 	//your code here
 }
 
+public void show(){
+	fill(int(random (253)),int(random(253)), int(random(253)));
+	ellipse(50,50,50,50);
+}
