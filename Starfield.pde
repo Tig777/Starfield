@@ -1,29 +1,50 @@
-
+Particle[] particles;
 void setup()
 {
 	size(400,400);
 	background(10);
+	particles = new Particle []
 }
 void draw()
 {
-	//your code here
+	
 }
-class NormalParticle
+class NormalParticle implements Particle
 {
-	//your code here
+	int myX, myY, movement, size;
+
+	public void move(){
+
+	}
+	public void show(){
+
+	}
 }
 interface Particle
 {
 	public void move();
 	public void show();
 }
-class OddballParticle //uses an interface
+class OddballParticle implements Particle //uses an interface
 {
-	//your code here
+	int myX1, myY1, movement1, size1;
+	public void move(){
+
+	}
+	public void show(){
+
+	}
 }
 class JumboParticle //uses inheritance
 {
-	//your code here
+	int myX2, myY2, movement2, size2;
+
+	public void move(){
+
+	}
+	public void show(){
+
+	}
 }
 
 public void show(){
