@@ -3,15 +3,26 @@ void setup()
 {
 	size(400,400);
 	background(10);
-	particles = new Particle []
+	particles = new Particle [150];
+	for(int i = 0; i<particle.length;i++){	
+	particle[i] = new NormalParticle();
+	particle[0] = new OddballParticle();
+	particle[1] = new JumboParticle();
 }
 void draw()
 {
-	
+	background(200);
+	for(int i = 0; i<particle.length;i++){	
+		particle[i].move();
+		particle[i].show();
+	}
+
 }
 class NormalParticle implements Particle
 {
 	int myX, myY, movement, size;
+	myX = 200;
+	myY = 200;
 
 	public void move(){
 
@@ -48,6 +59,5 @@ class JumboParticle //uses inheritance
 }
 
 public void show(){
-	fill(int(random (253)),int(random(253)), int(random(253)));
-	ellipse(50,50,50,50);
+	
 }
