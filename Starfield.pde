@@ -8,6 +8,7 @@ void setup()
 	particle[i] = new NormalParticle();
 	particle[0] = new OddballParticle();
 	particle[1] = new JumboParticle();
+
 }
 void draw()
 {
@@ -39,6 +40,8 @@ interface Particle
 class OddballParticle implements Particle //uses an interface
 {
 	int myX1, myY1, movement1, size1;
+	myX1 = 200;
+	myY1 = 200;
 	public void move(){
 
 	}
@@ -49,7 +52,10 @@ class OddballParticle implements Particle //uses an interface
 class JumboParticle //uses inheritance
 {
 	int myX2, myY2, movement2, size2;
-
+	myX2 = 200;
+	myY2 = 200;
+	movement2 = (int)(Math.random()*15)-15
+	size
 	public void move(){
 
 	}
