@@ -19,14 +19,20 @@ void draw()
 	}
 
 }
+
+//sin = y
+//cos = x
 class NormalParticle implements Particle
 {
-	int myX, myY, movement, size;
+	double myX, myY, movement, angle;
 	myX = 200;
 	myY = 200;
-
+	movement =(Math.random()*15);
+	angle = Math.random()* 5.1;
 	public void move(){
-
+		if () {
+			
+		}
 	}
 	public void show(){
 
@@ -49,7 +55,7 @@ class OddballParticle implements Particle //uses an interface
 
 	}
 }
-class JumboParticle //uses inheritance
+class JumboParticle extends Particle//uses inheritance
 {
 	int myX2, myY2, movement2, size2;
 	myX2 = 200;
