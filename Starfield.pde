@@ -1,76 +1,95 @@
-Particle[] particles;
+NormalParticle[] particles;
 void setup()
 {
 	size(400,400);
 	background(10);
-	particles = new Particle [150];
-	for(int i = 0; i<particle.length;i++){	
-	particle[i] = new NormalParticle();
-	particle[0] = new OddballParticle();
-	particle[1] = new JumboParticle();
-
+	particles = new NormalParticle [7];
+	for(int i = 0; i<particles.length;i++){	
+	particles[i] = new NormalParticle();
+	//particle[0] = new OddballParticle();
+	//particle[1] = new JumboParticle();
+	}
 }
 void draw()
 {
 	background(200);
-	for(int i = 0; i<particle.length;i++){	
-		particle[i].move();
-		particle[i].show();
+	for(int i = 0; i<particles.length;i++)
+	{	
+		particles[i].move();
+		particles[i].show();
 	}
 
 }
 
-//sin = y
-//cos = x
-class NormalParticle implements Particle
+
+class NormalParticle
 {
-	double myX, myY, movement, angle;
-	myX = 200;
-	myY = 200;
-	movement = (Math.random()*15);
-	angle = Math.random()* 5.1;
+	double myX, myY, angle, speed;
+	
+	NormalParticle(){		
+		myX = 200;
+		myY = 200;
+		angle = (Math.random()*2)*PI;
+		speed = Math.random()* 1;
+	}
+	
 	public void move(){
-		if () {
-			
-		}
+		myX = myX + Math.cos(angle)*speed;
+		myY = myY + Math.sin(angle)*speed;
 	}
+	
 	public void show(){
-		ellipse((float)myX,(float)myY, 200,200);
+
+		
+		fill(int(random (253)),int(random(253)), int(random(253)));
+		ellipse((float)myX,(float)myY, 10,10);
 	}
 }
-interface Particle
-{
+	interface Particle
+	{
 	public void move();
 	public void show();
-}
+	}
+
+
+
+
+
+
+/*
 class OddballParticle implements NormalParticle //uses an interface
 {
-	double myX1, myY1, movement1, angle1;
+	double myX1, myY1, angle1, speed1;
 	myX1 = 200;
 	myY1 = 200;
-	movement1 = (Math.random()*15);
-	angle1 = Math.random()* 5.1;
+	angle1 = Math.random()*5.1;
+	speed1 = Math.random()* 5.1;
 
-	public void move(){
-		}
+	public void move()
+	{
+	myX1 = myX1 + Math.cos(angle1)*speed1
+	myY1 = myY1 + Math.sin(angle1)*speed1
+	}
 
-	
-	public void show(){
-		ellipse((float)myX1,(float)myY1, 200,200);
+	public void show()
+	{
+		fill(int(random (253)),int(random(253)), int(random(253)));
+		ellipse((float)myX1,(float)myY1, 30,30 );
 	}
 }
-class JumboParticle extends Particle//uses inheritance
+class JumboParticle extends NormalParticle//uses inheritance
 {
 
-	public void show(){
+	public void show()
+	{
 		fill(int(random (253)),int(random(253)), int(random(253)));
-		ellipse((float)myX2,(float)myY2, 200,200);
+		ellipse((float)myX2,(float)myY2, 40,40);
 	}
 }
 
 
 	
-/*
+
 	double myX2, myY2, movement2, angle2;
 	myX2 = 200;
 	myY2 = 200;
@@ -80,3 +99,4 @@ class JumboParticle extends Particle//uses inheritance
 
 	}
 	*/
+
