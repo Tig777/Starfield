@@ -5,11 +5,12 @@ void setup()
 	particles = new Particle [500];
 	for(int i = 0; i<particles.length; i++){	
 	particles[i] = new NormalParticle();
-	if(i % (500/7) == 0)
+	
+	if(i % (71) == 0)
 		{
 			particles[i] = new JumboParticle();
 		}
-	else if(i % (500/6) == 0)
+	else if(i % (83) == 0)
 		{
 			particles[i] = new OddballParticle();
 		}
@@ -17,6 +18,8 @@ void setup()
 	}
 
 }
+
+
 
 void draw()
 {
@@ -26,8 +29,6 @@ void draw()
 	{	
 		particles[i].move();
 		particles[i].show();
-		
-		
 	}
 
 }
