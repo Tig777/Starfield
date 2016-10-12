@@ -20,8 +20,7 @@ void setup()
 void draw()
 {
 	background(25,20,20);
-	fill(255,255,0);
-	ellipse(200,200,100,100);
+	
 	for(int i = 0; i<particles.length;i++)
 	{	
 		particles[i].move();
