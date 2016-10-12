@@ -2,9 +2,7 @@ Particle[] particles;
 void setup()
 {
 	size(400,400);
-	
 	particles = new Particle [500];
-	//int piscine = (int)(Math.random()*500);
 	for(int i = 0; i<particles.length;i++){	
 	particles[i] = new NormalParticle();
 	particles[399] = new OddballParticle();
@@ -25,8 +23,7 @@ void draw()
 	{	
 		particles[i].move();
 		particles[i].show();
-		//particles[0].move();
-		//particles[0].show();
+		
 		
 	}
 
